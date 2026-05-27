@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/x-icon" href="/images/logo/lfinic favicon.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="description" content="Elfinic - Online Shopping Platform" />
+  <title>Elfinic</title>
+  <!-- PWA -->
+  <link rel="apple-touch-icon" href="/pwa-192x192.png" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="Elfinic" />
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="/images/logo/lfinic favicon.png">
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+  <!-- select 2 -->
+  <link rel="stylesheet" href="/css/select2.min.css">
+  <!-- Slick -->
+  <link rel="stylesheet" href="/css/slick.css">
+  <!-- Jquery Ui -->
+  <link rel="stylesheet" href="/css/jquery-ui.css">
+  <!-- animate -->
+  <link rel="stylesheet" href="/css/animate.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Main css -->
+  <link rel="stylesheet" href="/css/main.css">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=%VITE_GA_ID%"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', '%VITE_GA_ID%');
+  </script>
+
+
+</head>
+
+<body>
+  <div id="root"></div>
+
+  <!-- Jquery js -->
+  <script src="/js/jquery-3.7.1.min.js"></script>
+  <!-- Bootstrap Bundle Js -->
+  <script src="/js/boostrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+
+  <!-- Bootstrap Bundle Js -->
+  <script src="/js/phosphor-icon.js"></script>
+  <!-- Select 2 -->
+  <script src="/js/select2.min.js"></script>
+  <!-- Slick js -->
+  <script src="/js/slick.min.js"></script>
+
+  <!-- React Override Script - Prevent jQuery conflicts -->
+  <script>
+    // Override specific slider initializations to prevent conflicts with React
+    window.preventReactConflicts = true;
+
+    // Store the original jQuery ready function
+    const originalReady = $.fn.ready;
+
+    // Override specific problematic initializations
+    const originalSlick = $.fn.slick;
+    $.fn.slick = function (options) {
+      // Skip initialization for React-managed elements
+      if (this.attr('data-react-managed') === 'true') {
+        console.log('Skipping slick initialization for React-managed element:', this[0]);
+        return this;
+      }
+      return originalSlick.call(this, options);
+    };
+  </script>
+
+  <!-- count down js -->
+  <script src="/js/count-down.js"></script>
+  <!-- jquery UI js -->
+  <script src="/js/jquery-ui.js"></script>
+  <!-- wow js -->
+  <script src="/js/wow.min.js"></script>
+  <!-- marque -->
+  <!-- <script src="/js/marque.min.js"></script> -->
+  <!-- marque -->
+  <!-- <script src="/js/vanilla-tilt.min.js"></script> -->
+  <!-- Counter -->
+  <script src="/js/counter.min.js"></script>
+  <!-- React Safe Init - prevents jQuery conflicts with React components -->
+  <script src="/js/react-safe-init.js"></script>
+  <!-- main js -->
+  <script src="/js/main.js"></script>
+
+  <!-- React app - loaded last to prevent conflicts -->
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+
+</html>

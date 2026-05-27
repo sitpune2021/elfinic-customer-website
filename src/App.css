@@ -1,0 +1,235 @@
+/* Profile Dropdown Styles */
+.profile-dropdown {
+  min-width: 200px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  animation: slideDown 0.2s ease-out;
+  left: -100%;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.profile-dropdown .common-dropdown__link {
+  transition: all 0.2s ease;
+  padding: 12px 16px;
+  font-size: 0.9rem;
+}
+
+.profile-dropdown .common-dropdown__link:hover {
+  background-color: #f8f9fa;
+  color: #2d3436;
+}
+
+.sub-container {
+  max-width: 1200px;
+  width: 100%;
+}
+
+.sub-container h1 {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #2d3436;
+  font-size: 2.8rem;
+  font-weight: 600;
+}
+
+.sub-container .cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  gap: 25px;
+}
+
+.sub-container .card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.sub-container .card:hover {
+  transform: translateY(-5px);
+}
+
+.sub-container .card-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  margin-bottom: 20px;
+  border: 5px solid white;
+}
+
+.sub-container .card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.sub-container .card:hover .card-image img {
+  transform: scale(1.05);
+}
+
+.sub-container .card-title {
+  text-align: center;
+  color: #2d3436;
+  font-weight: 500;
+  font-size: 1.3rem;
+  max-width: 180px;
+}
+
+/* 4 cards per row on desktop */
+@media (min-width: 992px) {
+  .sub-container .card {
+    flex: 0 0 calc(25% - 25px);
+  }
+}
+
+/* 3 cards per row on tablet */
+@media (max-width: 991px) and (min-width: 768px) {
+  .sub-container .card {
+    flex: 0 0 calc(33.333% - 25px);
+  }
+
+  .sub-container .card-image {
+    width: 180px;
+    height: 180px;
+  }
+
+  /* .sub-container h1 {
+    font-size: 2.5rem;
+  } */
+}
+
+/* 2 cards per row on mobile */
+@media (max-width: 767px) {
+  .sub-container .card {
+    flex: 0 0 calc(50% - 25px);
+  }
+
+  .sub-container .card-image {
+    width: 140px;
+    height: 140px;
+  }
+
+  .sub-container h1 {
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+  }
+
+  .sub-container .card-title {
+    font-size: 1.1rem;
+  }
+  .product-details__content h5 {
+    font-size: 1.2rem;
+  }
+}
+
+/* Adjust spacing for very small screens */
+@media (max-width: 480px) {
+  .sub-container .cards-container {
+    gap: 15px;
+  }
+
+  .sub-container .card {
+    flex: 0 0 calc(50% - 15px);
+  }
+
+  .sub-container .card-image {
+    width: 130px;
+    height: 130px;
+    margin-bottom: 15px;
+  }
+
+  .sub-container h1 {
+    font-size: 2rem;
+  }
+
+  .sub-container .card-title {
+    font-size: 1rem;
+    max-width: 120px;
+  }
+  .offer_text {
+    font-size: 0.55rem;
+  }
+  .more_offers_btn {
+    font-size: 0.55rem;
+  }
+  .size_chart_btn {
+    font-size: 0.55rem;
+    padding: 8px 8px 8px 8px !important;
+  }
+}
+
+/* Fixed Header Scroll Issue Fix */
+/* Smooth transition for body margin */
+body {
+  transition: margin-top 0.2s linear;
+}
+
+/* Override for fixed header to ensure proper positioning */
+.header.fixed-header {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  z-index: 999 !important;
+  background: white !important;
+}
+
+/*No Categories Styles */
+.no-categories-section {
+  /* min-height: 400px; */
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); */
+  border-radius: 15px;
+  margin: 20px 0;
+}
+
+.no-categories-content {
+  max-width: 500px;
+  padding: 20px;
+}
+
+.no-categories-icon {
+  opacity: 0.7;
+  font-size: 10px;
+}
+
+.no-categories-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.no-categories-message {
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+
+/* Hover effects for the button */
+.no-categories-content .btn-elifnic:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  width: 10px !important;
+}

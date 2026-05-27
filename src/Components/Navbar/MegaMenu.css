@@ -1,0 +1,259 @@
+/* Mega Menu Styles */
+.mega-menu-item {
+  position: relative;
+}
+
+.mega-menu {
+  position: absolute;
+  inset-inline-start: -200px;
+  inset-block-start: 100%;
+  width: 800px;
+  background-color: hsl(var(--white));
+  border-radius: 12px;
+  padding: 32px 0;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  z-index: 999;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(10px);
+}
+.view-all {
+  text-decoration: underline;
+}
+
+.view-all:hover {
+  color: #d8963c;
+}
+.mega-menu__link:hover::before {
+  content: "▸";
+  color: #d8963c;
+  font-size: 20px;
+  margin-top: 8px;
+  position: absolute;
+  left: -15px; /* place to the left */
+  top: -9%;
+  transform: translateY(-50%);
+}
+
+.mega-menu-item:hover .mega-menu {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.mega-menu__title {
+  color: hsl(var(--heading-color));
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  position: relative;
+}
+
+.mega-menu__title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    hsl(var(--main)) 0%,
+    hsl(var(--main-600)) 100%
+  );
+  border-radius: 2px;
+}
+
+.mega-menu__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.mega-menu__item {
+  margin-bottom: 8px;
+}
+
+.mega-menu__link {
+  display: block;
+  padding: 8px 0;
+  color: hsl(var(--gray-500));
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  position: relative;
+  padding-left: 0;
+}
+
+.mega-menu__link:hover {
+  color: #d8963c !important;
+  padding-left: 10px;
+}
+
+.mega-menu__link::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 2px;
+  background: hsl(var(--main-600));
+  transition: width 0.2s ease;
+}
+
+.mega-menu__link:hover::before {
+  width: 6px;
+}
+
+.mega-menu__banner {
+  height: 100%;
+}
+
+.mega-menu__banner-inner {
+  background: linear-gradient(
+    135deg,
+    hsl(var(--main-25)) 0%,
+    hsl(var(--main-50)) 100%
+  );
+  border-radius: 12px;
+  padding: 24px;
+  text-align: center;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 280px;
+}
+
+.mega-menu__banner-title {
+  color: hsl(var(--heading-color));
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.mega-menu__banner-desc {
+  color: hsl(var(--gray-600));
+  font-size: 0.875rem;
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+.mega-menu__banner-img {
+  margin-bottom: 16px;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mega-menu__banner-img img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.mega-menu__banner-inner:hover .mega-menu__banner-img img {
+  transform: scale(1.05);
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+  .mega-menu {
+    width: 700px;
+    inset-inline-start: -150px;
+  }
+}
+
+@media (max-width: 992px) {
+  .mega-menu {
+    position: static;
+    width: 100%;
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+    padding: 16px;
+    transform: none;
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .mega-menu-item:hover .mega-menu {
+    transform: none;
+  }
+
+  .mega-menu__banner-inner {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .mega-menu .row > div {
+    margin-bottom: 24px;
+  }
+
+  .mega-menu__banner-inner {
+    padding: 16px;
+  }
+}
+
+/* Animation keyframes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mega-menu-item:hover .mega-menu .col-lg-3 {
+  animation: fadeInUp 0.4s ease forwards;
+}
+
+.mega-menu-item:hover .mega-menu .col-lg-3:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.mega-menu-item:hover .mega-menu .col-lg-3:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.mega-menu-item:hover .mega-menu .col-lg-3:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.mega-menu-item:hover .mega-menu .col-lg-3:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+/* Hover effects for the main shop link */
+.mega-menu-item > .nav-menu__link {
+  position: relative;
+}
+
+.mega-menu-item:hover > .nav-menu__link {
+  color: hsl(var(--main-600)) !important;
+}
+
+/* Additional styling for better integration */
+.mega-menu .container {
+  max-width: 100%;
+  padding: 0 24px;
+}
+
+.mega-menu .row {
+  margin: 0;
+}
+
+.mega-menu .col-lg-3 {
+  padding: 0 16px;
+}

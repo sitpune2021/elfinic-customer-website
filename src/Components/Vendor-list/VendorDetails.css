@@ -1,0 +1,626 @@
+/* ============================================================
+   Vendor Details Styles — Desktop & Mobile
+   ============================================================ */
+
+.vendor-details-container {
+  padding: 20px 0;
+}
+
+/* ---- Sidebar Tab Styles ---- */
+.sidebar-tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sidebar-tab {
+  padding: 12px 16px;
+  border: 1px solid #4a5568;
+  color: white;
+  width: 100%;
+  border-radius: 4px;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: left;
+  font-size: 14px;
+}
+
+.sidebar-tab:hover {
+  background-color: #fb9901;
+  border-color: #fb9901;
+}
+
+.sidebar-tab.active {
+  background-color: #fb9901;
+  border-color: #fb9901;
+}
+
+/* ---- About Store Section ---- */
+.about-store-section {
+  background: white;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.about-store-section h4 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #1a202c;
+}
+
+.vendor-info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.vendor-info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.vendor-info-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #718096;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.vendor-info-label i {
+  margin-right: 4px;
+  color: #fb9901;
+}
+
+.vendor-info-value {
+  font-size: 15px;
+  font-weight: 500;
+  color: #2d3748;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  word-break: break-word;
+}
+
+.vendor-info-value i {
+  color: #fb9901;
+  font-size: 18px;
+}
+
+.vendor-info-value a {
+  color: #fb9901;
+  text-decoration: none;
+  transition: color 0.2s;
+  word-break: break-all;
+}
+
+.vendor-info-value a:hover {
+  color: #e88900;
+  text-decoration: underline;
+}
+
+.vendor-address-section {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.vendor-rating-display {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.rating-stars {
+  display: flex;
+  gap: 4px;
+}
+
+.rating-stars i {
+  color: #ecc94b;
+  font-size: 16px;
+}
+
+.rating-text {
+  font-size: 15px;
+  font-weight: 600;
+  color: #2d3748;
+}
+
+.rating-count {
+  font-size: 13px;
+  color: #718096;
+}
+
+/* ---- Loading and Error States ---- */
+.loading-vendor-details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.loading-spinner {
+  width: 3rem;
+  height: 3rem;
+  border: 4px solid #f3f4f6;
+  border-top-color: #fb9901;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.error-vendor-details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.error-icon {
+  font-size: 48px;
+  color: #f56565;
+}
+
+.error-message {
+  font-size: 16px;
+  color: #2d3748;
+  text-align: center;
+}
+
+/* ---- Company Logo ---- */
+.company-logo-display {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid #e2e8f0;
+}
+
+/* ---- Badge Style ---- */
+.info-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  background-color: #edf2f7;
+  color: #4a5568;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.info-badge.primary {
+  background-color: #fef3e6;
+  color: #fb9901;
+}
+
+/* ---- Tab Content Animation ---- */
+.tab-content-enter {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.tab-content-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+/* ============================================================
+   Mobile Tab Bar (visible on < 992px)
+   ============================================================ */
+.vendor-mobile-tab-bar {
+  width: 100%;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  padding: 6px;
+  margin-bottom: 4px;
+}
+
+.vendor-mobile-tab-bar__inner {
+  display: flex;
+  gap: 4px;
+  width: 100%;
+}
+
+.vendor-mobile-tab {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 10px 8px;
+  border: none;
+  border-radius: 10px;
+  background: transparent;
+  color: #718096;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.vendor-mobile-tab i {
+  font-size: 20px;
+  transition: color 0.25s ease;
+}
+
+.vendor-mobile-tab:hover {
+  background: #fef3e6;
+  color: #fb9901;
+}
+
+.vendor-mobile-tab.active {
+  background: linear-gradient(135deg, #fb9901, #f77f00);
+  color: #fff;
+  box-shadow: 0 3px 10px rgba(251, 153, 1, 0.35);
+}
+
+.vendor-mobile-tab.active i {
+  color: #fff;
+}
+
+/* ============================================================
+   Hide sidebar on mobile (categories shown as tab instead)
+   ============================================================ */
+@media (max-width: 991px) {
+  .shop-sidebar {
+    display: none !important;
+  }
+}
+
+/* ============================================================
+   Mobile Categories Tab Content
+   ============================================================ */
+.mobile-categories-section {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.mobile-categories-section h4 {
+  font-size: 22px;
+  font-weight: 600;
+  color: #1a202c;
+}
+
+.mobile-category-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mobile-category-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  background: #fff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+  font-size: 15px;
+  font-weight: 500;
+  color: #2d3748;
+}
+
+.mobile-category-item:hover {
+  border-color: #fb9901;
+  background: #fffaf0;
+  transform: translateX(4px);
+}
+
+.mobile-category-item.active {
+  border-color: #fb9901;
+  background: linear-gradient(135deg, #fffaf0, #fff5e6);
+  color: #fb9901;
+  box-shadow: 0 2px 8px rgba(251, 153, 1, 0.15);
+}
+
+.mobile-category-icon {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: #f7fafc;
+  flex-shrink: 0;
+  font-size: 18px;
+  color: #718096;
+  transition: all 0.2s ease;
+}
+
+.mobile-category-item.active .mobile-category-icon {
+  background: #fb9901;
+  color: #fff;
+}
+
+.mobile-category-item:hover .mobile-category-icon {
+  background: #fef3e6;
+  color: #fb9901;
+}
+
+.mobile-category-item.active:hover .mobile-category-icon {
+  background: #fb9901;
+  color: #fff;
+}
+
+.mobile-category-name {
+  flex: 1;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.mobile-category-arrow {
+  font-size: 14px;
+  color: #cbd5e0;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.mobile-category-item:hover .mobile-category-arrow,
+.mobile-category-item.active .mobile-category-arrow {
+  color: #fb9901;
+  transform: translateX(2px);
+}
+
+.mobile-category-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 24px;
+  color: #718096;
+  font-size: 14px;
+}
+
+.mobile-category-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 32px 16px;
+  color: #a0aec0;
+  font-size: 14px;
+}
+
+.mobile-category-empty i {
+  font-size: 32px;
+}
+
+/* ============================================================
+   Responsive — Tablets (max-width: 768px)
+   ============================================================ */
+@media (max-width: 768px) {
+  /* Vendor info grid — single column */
+  .vendor-info-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  /* About store section */
+  .about-store-section {
+    padding: 16px;
+    border-radius: 8px;
+  }
+
+  .about-store-section h4 {
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+
+  .about-store-section h5 {
+    font-size: 17px;
+  }
+
+  /* Vendor info items — card style on mobile */
+  .vendor-info-item {
+    background: #f8fafc;
+    padding: 12px 14px;
+    border-radius: 8px;
+    border: 1px solid #edf2f7;
+  }
+
+  .vendor-info-label {
+    font-size: 11px;
+    letter-spacing: 0.8px;
+  }
+
+  .vendor-info-value {
+    font-size: 14px;
+  }
+
+  /* Address section */
+  .vendor-address-section {
+    margin-top: 16px;
+    padding-top: 16px;
+  }
+
+  /* Breadcrumb */
+  .breadcrumb .breadcrumb-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .breadcrumb h6 {
+    font-size: 16px;
+  }
+
+  /* Pagination — smaller on mobile */
+  .pagination .page-link {
+    width: 40px !important;
+    height: 40px !important;
+    font-size: 13px !important;
+  }
+
+  /* Product count text */
+  .vendor-two-details__contents .mb-20 h5 {
+    font-size: 16px;
+  }
+
+  .vendor-two-details__contents .mb-20 p {
+    font-size: 13px;
+  }
+
+  /* Mobile categories — tighter */
+  .mobile-categories-section {
+    padding: 16px;
+  }
+
+  .mobile-categories-section h4 {
+    font-size: 20px;
+  }
+
+  .mobile-category-item {
+    padding: 12px 14px;
+    font-size: 14px;
+  }
+}
+
+/* ============================================================
+   Responsive — Small phones (max-width: 480px)
+   ============================================================ */
+@media (max-width: 480px) {
+  /* Vendor details section top padding */
+  .vendor-two-details {
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+
+  /* About store section — tighter */
+  .about-store-section {
+    padding: 12px;
+  }
+
+  .about-store-section h4 {
+    font-size: 18px;
+    margin-bottom: 14px;
+  }
+
+  .about-store-section h5 {
+    font-size: 15px;
+  }
+
+  /* Vendor mobile tab bar — even more compact */
+  .vendor-mobile-tab {
+    padding: 8px 4px;
+    font-size: 11px;
+  }
+
+  .vendor-mobile-tab i {
+    font-size: 18px;
+  }
+
+  /* Pagination — even smaller */
+  .pagination .page-link {
+    width: 36px !important;
+    height: 36px !important;
+    font-size: 12px !important;
+  }
+
+  .pagination {
+    gap: 6px !important;
+  }
+
+  /* Search filter row */
+  .vendor-search-filter-row .form-control {
+    font-size: 13px;
+    padding: 8px 10px !important;
+  }
+
+  .vendor-search-filter-row .form-select {
+    font-size: 13px;
+    height: 40px !important;
+    padding-left: 12px !important;
+    padding-right: 28px !important;
+  }
+
+  /* Vendor info value links — truncate on tiny screens */
+  .vendor-info-value a {
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+  }
+
+  /* Loading / error states — shorter on mobile */
+  .loading-vendor-details,
+  .error-vendor-details {
+    min-height: 250px;
+  }
+
+  .error-icon {
+    font-size: 36px;
+  }
+
+  .error-message {
+    font-size: 14px;
+    padding: 0 16px;
+  }
+
+  /* Company logo — smaller on mobile */
+  .company-logo-display {
+    width: 60px;
+    height: 60px;
+  }
+
+  /* Mobile categories — compact */
+  .mobile-categories-section {
+    padding: 12px;
+  }
+
+  .mobile-categories-section h4 {
+    font-size: 18px;
+    margin-bottom: 14px;
+  }
+
+  .mobile-category-item {
+    padding: 10px 12px;
+    font-size: 13px;
+    gap: 10px;
+  }
+
+  .mobile-category-icon {
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+  }
+}
+
+/* ============================================================
+   Vendor content area — full width on mobile
+   ============================================================ */
+@media (max-width: 991px) {
+  .vendor-two-details__contents {
+    width: 100% !important;
+    flex: 1 1 100% !important;
+  }
+
+  .vendor-two-details-wrapper {
+    gap: 16px !important;
+  }
+}
+

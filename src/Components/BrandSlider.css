@@ -1,0 +1,265 @@
+/* ============================================
+   Brand Slider – Meesho-style compact cards
+   Scoped under .brandSlider-root to avoid conflicts
+   ============================================ */
+
+/* ---------- wrapper ---------- */
+.brandSlider-root {
+  padding-bottom: 24px;
+  overflow: hidden;
+}
+
+.brandSlider-root .brandSlider-container {
+  border: 1px solid #e8e8e8;
+  border-radius: 12px;
+  padding: 20px 16px;
+  background: #fff;
+}
+
+.brandSlider-root .brandSlider-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.brandSlider-root .brandSlider-heading h5 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  color: #222;
+}
+
+/* ---------- slick overrides ---------- */
+.brandSlider-root .brandSlider-track .slick-arrow {
+  display: none !important;
+}
+
+.brandSlider-root .brandSlider-track .slick-arrow::before {
+  display: none;
+}
+
+.brandSlider-root .brandSlider-track .slick-list {
+  margin: 0 -6px;
+}
+
+.brandSlider-root .brandSlider-track .slick-slide {
+  padding: 0 6px;
+}
+
+.brandSlider-root .brandSlider-track .slick-slide > div {
+  display: flex;
+}
+
+/* ---------- brand card ---------- */
+.brandSlider-root .brandSlider-card {
+  background: #fafafa;
+  border: 1px solid #eeeeee;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 10px;
+  height: 95px;
+  cursor: pointer;
+  transition:
+    transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+  overflow: hidden;
+}
+
+/* .brandSlider-root .brandSlider-card:hover {
+  transform: scale(1.12);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+  position: relative;
+  border-color: #d0d0d0;
+} */
+
+/* ---------- brand image ---------- */
+.brandSlider-root .brandSlider-card img.brandSlider-img {
+  width: 100%;
+  height: 62px;
+  object-fit: contain;
+  display: block;
+  pointer-events: none;
+  transition: transform 0.25s ease;
+  mix-blend-mode: multiply;
+}
+
+.brandSlider-root .brandSlider-card:hover img.brandSlider-img {
+  transform: scale(1.15);
+  -webkit-transform: scale(1.15);
+  -moz-transform: scale(1.15);
+  -ms-transform: scale(1.15);
+  -o-transform: scale(1.15);
+}
+
+/* ---------- no-image placeholder ---------- */
+.brandSlider-root .brandSlider-noImg {
+  width: 100%;
+  height: 62px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #b0b0b0;
+  font-size: 28px;
+}
+
+/* ---------- skeleton loading ---------- */
+.brandSlider-root .brandSlider-skeleton {
+  padding: 0 4px;
+}
+
+.brandSlider-root .brandSlider-skeletonBox {
+  width: 100%;
+  height: 95px;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e4e4e4 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: brandSlider-shimmer 1.4s infinite ease-in-out;
+  border-radius: 10px;
+}
+
+@keyframes brandSlider-shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* ---------- empty / error states ---------- */
+.brandSlider-root .brandSlider-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 10px;
+  text-align: center;
+}
+
+.brandSlider-root .brandSlider-empty i {
+  font-size: 40px;
+  margin-bottom: 8px;
+  opacity: 0.6;
+}
+
+.brandSlider-root .brandSlider-empty p {
+  font-size: 14px;
+  font-weight: 500;
+  color: #6c757d;
+  margin: 0;
+}
+
+/* ---------- status badges ---------- */
+.brandSlider-root .brandSlider-statusText {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* ============================================
+   Responsive – show more cards on every size
+   ============================================ */
+@media (max-width: 1599px) {
+  .brandSlider-root .brandSlider-card {
+    height: 88px;
+    padding: 12px 8px;
+  }
+  .brandSlider-root .brandSlider-card img.brandSlider-img,
+  .brandSlider-root .brandSlider-noImg {
+    height: 56px;
+  }
+}
+
+@media (max-width: 1199px) {
+  .brandSlider-root .brandSlider-card {
+    height: 82px;
+    padding: 10px 8px;
+  }
+  .brandSlider-root .brandSlider-card img.brandSlider-img,
+  .brandSlider-root .brandSlider-noImg {
+    height: 52px;
+  }
+}
+
+@media (max-width: 991px) {
+  .brandSlider-root .brandSlider-container {
+    padding: 16px 10px;
+    border-radius: 10px;
+  }
+  .brandSlider-root .brandSlider-heading {
+    margin-bottom: 12px;
+  }
+  .brandSlider-root .brandSlider-heading h5 {
+    font-size: 16px;
+  }
+  .brandSlider-root .brandSlider-card {
+    height: 76px;
+    border-radius: 10px;
+    padding: 10px 6px;
+  }
+  .brandSlider-root .brandSlider-card img.brandSlider-img,
+  .brandSlider-root .brandSlider-noImg {
+    height: 48px;
+  }
+  .brandSlider-root .brandSlider-track .slick-list {
+    margin: 0 -4px;
+  }
+  .brandSlider-root .brandSlider-track .slick-slide {
+    padding: 0 4px;
+  }
+}
+
+@media (max-width: 575px) {
+  .brandSlider-root {
+    padding-bottom: 16px;
+  }
+  .brandSlider-root .brandSlider-container {
+    padding: 12px 8px;
+  }
+  .brandSlider-root .brandSlider-heading h5 {
+    font-size: 14px;
+  }
+  .brandSlider-root .brandSlider-card {
+    height: 68px;
+    border-radius: 8px;
+    padding: 8px 5px;
+  }
+  .brandSlider-root .brandSlider-card img.brandSlider-img,
+  .brandSlider-root .brandSlider-noImg {
+    height: 42px;
+  }
+  .brandSlider-root .brandSlider-track .slick-list {
+    margin: 0 -3px;
+  }
+  .brandSlider-root .brandSlider-track .slick-slide {
+    padding: 0 3px;
+  }
+}
+
+@media (max-width: 424px) {
+  .brandSlider-root .brandSlider-card {
+    height: 60px;
+    padding: 6px 4px;
+  }
+  .brandSlider-root .brandSlider-card img.brandSlider-img,
+  .brandSlider-root .brandSlider-noImg {
+    height: 38px;
+  }
+}
+
+@media (max-width: 359px) {
+  .brandSlider-root .brandSlider-card {
+    height: 54px;
+  }
+  .brandSlider-root .brandSlider-card img.brandSlider-img,
+  .brandSlider-root .brandSlider-noImg {
+    height: 34px;
+  }
+}

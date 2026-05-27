@@ -1,0 +1,406 @@
+/* =============================================
+   Mobile Sidebar Navigation — Scoped with .mn-
+   Uses project tokens from index.css
+   ============================================= */
+
+/* ---------- Sidebar Panel ---------- */
+.mn-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 290px;
+  max-width: 85vw;
+  height: 100dvh;
+  background: #fff;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(-100%);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+  box-shadow: 4px 0 24px rgba(5, 0, 64, 0.12);
+  overflow: hidden;
+}
+
+.mn-sidebar.active {
+  transform: translateX(0);
+}
+
+/* ---------- Overlay ---------- */
+.mn-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(5, 0, 64, 0.45);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  z-index: 9998;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease;
+}
+
+.mn-overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ---------- Header (logo + close) ---------- */
+.mn-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--medium-gray, #e9ecef);
+  flex-shrink: 0;
+  background: #fff;
+}
+
+.mn-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.mn-logo img {
+  max-height: 38px;
+  width: auto;
+  object-fit: contain;
+}
+
+.mn-close {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: var(--light-gray, #f8f9fa);
+  border-radius: var(--radius-md, 8px);
+  color: var(--text-primary, #333);
+  font-size: 18px;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.mn-close:hover {
+  background: var(--primary-dark, #050040);
+  color: #fff;
+}
+
+/* ---------- Scrollable nav area ---------- */
+.mn-body {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 8px 0;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* thin scrollbar */
+.mn-body::-webkit-scrollbar {
+  width: 3px;
+}
+.mn-body::-webkit-scrollbar-thumb {
+  background: var(--primary-skyblue, #a9d4e7);
+  border-radius: 4px;
+}
+
+/* ---------- Nav list ---------- */
+.mn-nav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* ---------- Nav item / link ---------- */
+.mn-nav__item {
+  border-bottom: 1px solid rgba(5, 0, 64, 0.04);
+}
+
+.mn-nav__link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 18px;
+  font-family: var(--heading-font, "Quicksand", sans-serif);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary, #333);
+  text-decoration: none;
+  border: none;
+  background: none;
+  width: 100%;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+  position: relative;
+  letter-spacing: 0.2px;
+}
+
+.mn-nav__link:hover {
+  background: rgba(169, 212, 231, 0.12);
+  color: var(--primary-dark, #050040);
+}
+
+/* Active route highlight */
+.mn-nav__link.active {
+  color: var(--primary-orange, #d8963c);
+  background: rgba(216, 150, 60, 0.06);
+}
+
+.mn-nav__link.active::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 60%;
+  background: var(--primary-orange, #d8963c);
+  border-radius: 0 3px 3px 0;
+}
+
+/* Icon inside link */
+.mn-nav__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: var(--radius-sm, 4px);
+  background: rgba(5, 0, 64, 0.04);
+  font-size: 16px;
+  color: var(--primary-dark, #050040);
+  flex-shrink: 0;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.mn-nav__link:hover .mn-nav__icon,
+.mn-nav__link.active .mn-nav__icon {
+  background: rgba(216, 150, 60, 0.12);
+  color: var(--primary-orange, #d8963c);
+}
+
+/* Cart badge */
+.mn-cart-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  font-size: 10px;
+  font-weight: 700;
+  color: #fff;
+  background: var(--primary-orange, #d8963c);
+  border-radius: 10px;
+  margin-left: auto;
+  line-height: 1;
+}
+
+/* Chevron for submenu parent */
+.mn-chevron {
+  margin-left: auto;
+  font-size: 14px;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  color: var(--dark-gray, #6c757d);
+}
+
+.mn-nav__item.mn-open > .mn-nav__link .mn-chevron {
+  transform: rotate(180deg);
+  color: var(--primary-orange, #d8963c);
+}
+
+/* ---------- Submenu (smooth collapse) ---------- */
+.mn-submenu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition:
+    max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.3s ease;
+  opacity: 0;
+  background: rgba(5, 0, 64, 0.02);
+}
+
+.mn-nav__item.mn-open > .mn-submenu {
+  max-height: 600px;
+  opacity: 1;
+}
+
+.mn-submenu__item {
+  border-bottom: 1px solid rgba(5, 0, 64, 0.03);
+}
+
+.mn-submenu__item:last-child {
+  border-bottom: none;
+}
+
+.mn-submenu__link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 18px 9px 58px;
+  font-family: var(--body-font, "Inter", sans-serif);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary, #6c757d);
+  text-decoration: none;
+  transition:
+    color 0.2s ease,
+    background 0.2s ease,
+    padding-left 0.2s ease;
+}
+
+.mn-submenu__link:hover {
+  color: var(--primary-orange, #d8963c);
+  background: rgba(216, 150, 60, 0.06);
+  padding-left: 62px;
+}
+
+.mn-submenu__link.active {
+  color: var(--primary-orange, #d8963c);
+  font-weight: 600;
+}
+
+.mn-submenu__view-all {
+  color: var(--primary-dark, #050040);
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.3px;
+}
+
+.mn-submenu__view-all:hover {
+  color: var(--primary-orange, #d8963c);
+}
+
+/* Shimmer for loading state */
+.mn-submenu__loading {
+  padding: 10px 18px 10px 58px;
+  font-size: 13px;
+  color: var(--dark-gray, #6c757d);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.mn-submenu__loading::before {
+  content: "";
+  width: 14px;
+  height: 14px;
+  border: 2px solid var(--primary-skyblue, #a9d4e7);
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: mn-spin 0.6s linear infinite;
+}
+
+@keyframes mn-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ---------- Footer (login/logout) ---------- */
+.mn-footer {
+  flex-shrink: 0;
+  padding: 12px 16px 16px;
+  border-top: 1px solid var(--medium-gray, #e9ecef);
+  background: var(--light-gray, #f8f9fa);
+}
+
+.mn-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 16px;
+  font-family: var(--heading-font, "Quicksand", sans-serif);
+  font-size: 13px;
+  font-weight: 700;
+  border-radius: var(--radius-md, 8px);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  text-decoration: none;
+  border: none;
+  letter-spacing: 0.3px;
+}
+
+.mn-btn--primary {
+  background: var(--primary-dark, #050040);
+  color: #fff;
+  width: 100%;
+}
+
+.mn-btn--primary:hover {
+  background: var(--primary-orange, #d8963c);
+  box-shadow: 0 4px 12px rgba(216, 150, 60, 0.3);
+}
+
+.mn-btn--outline {
+  background: transparent;
+  border: 1.5px solid var(--primary-dark, #050040);
+  color: var(--primary-dark, #050040);
+  flex: 1;
+}
+
+.mn-btn--outline:hover {
+  background: var(--primary-dark, #050040);
+  color: #fff;
+}
+
+.mn-btn--filled {
+  background: var(--primary-orange, #d8963c);
+  color: #fff;
+  flex: 1;
+}
+
+.mn-btn--filled:hover {
+  background: #c07d2a;
+  box-shadow: 0 4px 12px rgba(216, 150, 60, 0.3);
+}
+
+.mn-footer__row {
+  display: flex;
+  gap: 10px;
+}
+
+/* ---------- Body lock ---------- */
+body.mn-locked {
+  overflow: hidden;
+  touch-action: none;
+}
+
+/* ---------- Responsive (small phones) ---------- */
+@media (max-width: 360px) {
+  .mn-sidebar {
+    width: 260px;
+  }
+
+  .mn-nav__link {
+    padding: 10px 14px;
+    font-size: 13px;
+  }
+
+  .mn-submenu__link {
+    padding-left: 48px;
+    font-size: 12px;
+  }
+
+  .mn-submenu__link:hover {
+    padding-left: 52px;
+  }
+
+  .mn-logo img {
+    max-height: 32px;
+  }
+}

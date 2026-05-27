@@ -1,0 +1,249 @@
+/* ==========================================
+   ProductSlider Component Styles
+   Myntra-style layout — no global conflicts
+   ========================================== */
+
+/* Skeleton Slider Container */
+.skeleton-slider {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 16px;
+  padding-bottom: 30px;
+  animation: fadeIn 0.3s ease-in;
+}
+
+/* Skeleton Slide */
+.skeleton-slide {
+  width: 100%;
+  min-height: 220px;
+}
+
+/* Skeleton Product Card — matches Myntra card shape */
+.skeleton-product-card {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+/* Skeleton Image — 3:4 aspect ratio */
+.skeleton-image {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e8e8e8 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* Skeleton Content — info section */
+.skeleton-content {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 10px;
+}
+
+/* Skeleton Text */
+.skeleton-text {
+  height: 14px;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e8e8e8 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 4px;
+}
+
+.skeleton-title {
+  width: 70%;
+  height: 14px;
+  margin: 0 auto;
+}
+
+.skeleton-subtitle {
+  width: 50%;
+  height: 16px;
+  margin: 0 auto;
+}
+
+/* Shimmer Animation */
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Pulse Animation */
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1519px) {
+  .skeleton-slider {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media (max-width: 1279px) {
+  .skeleton-slider {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 1023px) {
+  .skeleton-slider {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+  .skeleton-slide {
+    min-height: 180px;
+  }
+}
+
+@media (max-width: 639px) {
+  .skeleton-slider {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .skeleton-slide {
+    min-height: 160px;
+  }
+}
+
+@media (max-width: 360px) {
+  .skeleton-slider {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+  .skeleton-slide {
+    min-height: 140px;
+  }
+}
+
+/* Smooth transition when content loads */
+.swiper,
+.product-slider-loaded {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Swiper link reset */
+.product-slider-loaded a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+/* Swiper navigation arrows — compact Myntra-style */
+.product-slider-loaded .swiper-button-next,
+.product-slider-loaded .swiper-button-prev {
+  width: 36px;
+  height: 36px;
+  /* background: #fff; */
+  border-radius: 50%;
+  /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); */
+  color: #282c3f;
+  top: 40%;
+}
+
+.product-slider-loaded .swiper-button-next::after,
+.product-slider-loaded .swiper-button-prev::after {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+@media (max-width: 640px) {
+  .product-slider-loaded .swiper-button-next,
+  .product-slider-loaded .swiper-button-prev {
+    width: 28px;
+    height: 28px;
+  }
+  .product-slider-loaded .swiper-button-next::after,
+  .product-slider-loaded .swiper-button-prev::after {
+    font-size: 11px;
+  }
+}
+
+/* Hide pagination dots on mobile for cleaner look */
+.product-slider-loaded .swiper-pagination {
+  display: none;
+}
+
+/* Optional: Add hover effect to skeleton for better UX */
+.skeleton-product-card:hover {
+  transform: translateY(-2px);
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+/* Optimize animations for better performance */
+@media (prefers-reduced-motion: reduce) {
+  .skeleton-image,
+  .skeleton-text,
+  .skeleton-product-card {
+    animation: none;
+  }
+}
+
+/* Add will-change for better performance */
+.skeleton-slider {
+  will-change: opacity;
+}
+
+.swiper {
+  will-change: opacity, transform;
+}
+
+/* Prevent layout shift */
+.skeleton-slider {
+  min-height: 220px;
+}
+
+/* Quick fade for skeleton cards */
+.skeleton-slide {
+  animation: fadeInQuick 0.3s ease-out forwards;
+  opacity: 0;
+}
+
+.skeleton-slide:nth-child(1) {
+  animation-delay: 0.05s;
+}
+.skeleton-slide:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.skeleton-slide:nth-child(3) {
+  animation-delay: 0.15s;
+}
+.skeleton-slide:nth-child(4) {
+  animation-delay: 0.2s;
+}
+.skeleton-slide:nth-child(5) {
+  animation-delay: 0.25s;
+}
+.skeleton-slide:nth-child(6) {
+  animation-delay: 0.3s;
+}
+
+@keyframes fadeInQuick {
+  to {
+    opacity: 1;
+  }
+}

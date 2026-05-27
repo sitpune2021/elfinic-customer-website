@@ -1,0 +1,103 @@
+/* PrimeReact ConfirmDialog Custom Styles */
+.p-confirmdialog {
+  max-width: 500px;
+  min-width: 400px;
+}
+
+.p-confirmdialog .p-dialog-content {
+  padding: 1.5rem;
+}
+
+.p-confirmdialog .p-confirm-dialog-message {
+  margin-left: 1rem;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.p-confirmdialog .p-dialog-footer {
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+}
+
+.p-confirmdialog .p-dialog-footer button {
+  padding: 0.5rem 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border-radius: 0.375rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.p-confirmdialog .p-dialog-footer .p-confirm-dialog-accept {
+  background-color: #dc3545 !important;
+  color: white !important;
+  border: 1px solid #dc3545 !important;
+}
+
+.p-confirmdialog .p-dialog-footer .p-confirm-dialog-accept:hover {
+  background-color: #c82333 !important;
+  border-color: #bd2130 !important;
+}
+
+.p-confirmdialog .p-dialog-footer .p-confirm-dialog-reject {
+  background-color: white !important;
+  color: #6c757d !important;
+  border: 1px solid #6c757d !important;
+}
+
+.p-confirmdialog .p-dialog-footer .p-confirm-dialog-reject:hover {
+  background-color: #f8f9fa !important;
+  border-color: #5a6268 !important;
+}
+
+.p-confirmdialog .p-dialog-header {
+  padding: 1.5rem 1.5rem 1rem;
+}
+
+.p-confirmdialog .p-dialog-header .p-dialog-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #212529;
+}
+
+.p-confirmdialog-icon {
+  font-size: 2rem !important;
+  color: #ffc107 !important;
+}
+
+/* Custom Confirmation Dialog Styles */
+.p-dialog .p-dialog-footer {
+  border-top: 1px solid #dee2e6;
+}
+
+.p-dialog .p-button {
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.p-dialog .p-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.p-dialog .p-button-danger {
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.p-dialog .p-button-danger:hover {
+  background-color: #c82333;
+  border-color: #bd2130;
+}
+
+.p-dialog .p-button-text {
+  color: #6c757d;
+}
+
+.p-dialog .p-button-text:hover {
+  background-color: #f8f9fa;
+  color: #495057;
+}

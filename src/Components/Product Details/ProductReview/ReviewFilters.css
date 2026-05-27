@@ -1,0 +1,49 @@
+.review-filters {
+    margin-bottom: 24px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.filter-group label {
+    color: #4a5568;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+}
+
+.filter-group label i {
+    color: #667085;
+}
+
+.filter-group .form-select {
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.filter-group .form-select:focus {
+    border-color: var(--main-600, #00B207);
+    box-shadow: 0 0 0 0.2rem rgba(0, 178, 7, 0.15);
+}
+
+@media (max-width: 768px) {
+    .review-filters {
+        padding: 15px;
+    }
+    
+    .filter-group label {
+        font-size: 13px;
+    }
+    
+    .filter-group .form-select {
+        font-size: 13px;
+    }
+}

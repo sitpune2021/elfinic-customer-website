@@ -1,0 +1,55 @@
+/* Social Media Icons Component Styles */
+
+.social-media-icons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.social-media-icons span {
+  font-weight: 500;
+  margin-right: 8px;
+}
+
+.social-media-icons .social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  color: inherit;
+  text-decoration: none;
+}
+
+.social-media-icons .social-icon:hover {
+  transform: translateY(-2px);
+  opacity: 0.8;
+}
+
+/* Optional: Brand-specific colors */
+.social-media-icons .social-icon.instagram:hover {
+  color: #e4405f;
+}
+
+.social-media-icons .social-icon.facebook:hover {
+  color: #1877f2;
+}
+
+.social-media-icons .social-icon.twitter:hover {
+  color: #000000;
+}
+
+.social-media-icons .social-icon.linkedin:hover {
+  color: #0a66c2;
+}
+
+.social-media-icons .social-icon.youtube:hover {
+  color: #ff0000;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .social-media-icons {
+    gap: 8px;
+  }
+}

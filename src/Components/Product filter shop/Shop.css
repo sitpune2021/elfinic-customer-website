@@ -1,0 +1,374 @@
+/* ============================================================ */
+/* Shop Page Styles — prefixed / scoped to avoid conflicts      */
+/* ============================================================ */
+
+/* --- Category Sidebar --- */
+.category-item {
+  border-bottom: 1px solid #f1f1f1;
+}
+
+/* Hide scrollbar — all browsers */
+.shop-sidebar__box::-webkit-scrollbar {
+  display: none;
+}
+.shop-sidebar__box {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.shop-sidebar__box:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.category-toggle {
+  cursor: pointer;
+  transition: all 0.25s ease;
+  user-select: none;
+  padding: 8px 0;
+}
+
+.category-toggle:hover {
+  background-color: rgba(5, 0, 64, 0.04);
+  border-radius: var(--radius-sm, 4px);
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.category-toggle[data-selected="true"] {
+  background-color: rgba(169, 212, 231, 0.25);
+  border-radius: var(--radius-sm, 4px);
+  padding-left: 8px;
+  padding-right: 8px;
+  color: var(--primary-dark, #050040) !important;
+  font-weight: 600;
+}
+
+.category-icon {
+  transition: transform 0.3s ease;
+  font-size: 12px;
+}
+
+.category-toggle[data-expanded="true"] .category-icon {
+  transform: rotate(180deg);
+}
+
+.subcategories-dropdown {
+  background-color: var(--light-gray, #f8f9fa);
+  border-left: 3px solid var(--medium-gray, #e9ecef);
+  border-radius: var(--radius-sm, 4px);
+  margin-top: 8px;
+  padding: 5px;
+  animation: shopSlideDown 0.3s ease-out;
+}
+
+@keyframes shopSlideDown {
+  from {
+    opacity: 0;
+    max-height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  to {
+    opacity: 1;
+    max-height: 300px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+}
+
+.subcategory-item {
+  transition: all 0.2s ease;
+  border-radius: var(--radius-sm, 4px);
+}
+
+.subcategory-item:hover {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+  transform: translateX(3px);
+}
+
+.subcategory-link {
+  display: block;
+  padding: 8px 12px;
+  text-decoration: none;
+  color: var(--text-secondary, #6c757d);
+  font-size: 14px;
+  border-radius: var(--radius-sm, 4px);
+  transition: all 0.2s ease;
+}
+
+.subcategory-link:hover {
+  color: var(--text-primary, #333);
+  background-color: rgba(169, 212, 231, 0.15);
+  text-decoration: none;
+}
+
+.subcategory-link.selected,
+.subcategory-link.text-main-600 {
+  background-color: rgba(169, 212, 231, 0.3);
+  color: var(--primary-dark, #050040) !important;
+  border-left: 3px solid var(--primary-orange, #d8963c);
+  padding-left: 9px;
+}
+
+.loading-text {
+  color: var(--text-secondary, #6c757d);
+  font-size: 12px;
+  font-style: italic;
+  padding: 8px 0;
+}
+
+.no-subcategories {
+  color: #999;
+  font-size: 12px;
+  font-style: italic;
+  padding: 8px 0;
+}
+
+/* --- Price Slider Handle --- */
+.p-slider-handle {
+  top: -140%;
+}
+
+/* --- Brand Links --- */
+.brand-link {
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.brand-link:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+  text-decoration: none;
+}
+
+.brand-link.fw-medium {
+  background-color: rgba(169, 212, 231, 0.25);
+  color: var(--primary-dark, #050040) !important;
+  border-left: 3px solid var(--primary-dark, #050040);
+  padding-left: 9px;
+}
+
+/* --- Applied Filters --- */
+.applied-filters-section {
+  animation: shopFilterSlideIn 0.3s ease-out;
+}
+
+@keyframes shopFilterSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.filter-tag {
+  transition: all 0.2s ease;
+  animation: shopFilterFadeIn 0.2s ease-out;
+}
+
+@keyframes shopFilterFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.filter-tag:hover {
+  border-color: var(--primary-dark, #050040);
+  box-shadow: 0 2px 8px rgba(5, 0, 64, 0.12);
+}
+
+.filter-tag-remove {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-tag-remove:hover {
+  transform: scale(1.1);
+}
+
+.hover-bg-danger-100:hover {
+  background-color: #fee2e2 !important;
+}
+
+.hover-text-danger-600:hover {
+  color: #dc2626 !important;
+}
+
+.bg-main-50 {
+  background-color: #f0f9ff;
+}
+
+.bg-main-100 {
+  background-color: #e0f2fe;
+}
+
+.border-main-100 {
+  border-color: #bae6fd !important;
+}
+
+.text-main-100 {
+  color: #bae6fd;
+}
+
+/* ============================================================ */
+/* Skeleton Loading Cards for Shop Grid                          */
+/* ============================================================ */
+.shop-skeleton-card {
+  background: #fff;
+  border-radius: var(--radius-md, 8px);
+  overflow: hidden;
+  border: 1px solid var(--medium-gray, #e9ecef);
+}
+
+.shop-skeleton-img {
+  width: 100%;
+  padding-top: 110%;
+  background: linear-gradient(
+    110deg,
+    var(--light-gray, #f8f9fa) 30%,
+    #eef1f5 50%,
+    var(--light-gray, #f8f9fa) 70%
+  );
+  background-size: 200% 100%;
+  animation: shopShimmer 1.4s ease-in-out infinite;
+}
+
+.shop-skeleton-body {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.shop-skeleton-line {
+  border-radius: 4px;
+  background: linear-gradient(
+    110deg,
+    var(--light-gray, #f8f9fa) 30%,
+    #eef1f5 50%,
+    var(--light-gray, #f8f9fa) 70%
+  );
+  background-size: 200% 100%;
+  animation: shopShimmer 1.4s ease-in-out infinite;
+}
+
+.shop-skeleton-line--title {
+  height: 14px;
+  width: 85%;
+}
+
+.shop-skeleton-line--rating {
+  height: 10px;
+  width: 55%;
+}
+
+.shop-skeleton-line--price {
+  height: 16px;
+  width: 40%;
+}
+
+@keyframes shopShimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* ============================================================ */
+/* Responsive — sidebar toggles + filter section                 */
+/* ============================================================ */
+@media (max-width: 768px) {
+  .category-toggle {
+    padding: 12px 8px;
+  }
+
+  .subcategories-dropdown {
+    margin-left: 0;
+    margin-top: 12px;
+  }
+
+  .subcategory-link {
+    padding: 10px 12px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 576px) {
+  .applied-filters-section .flex-between {
+    flex-direction: column;
+    align-items: flex-start !important;
+    gap: 12px;
+  }
+
+  .filter-tag {
+    padding: 4px 10px;
+  }
+
+  .filter-tag span {
+    font-size: 11px;
+  }
+}
+
+/* ============================================================ */
+/* Shop sidebar mobile — fully self-contained                    */
+/* ============================================================ */
+.shop-sidebar-overlay {
+  display: none;
+}
+
+@media (max-width: 991px) {
+  .shop-sidebar-overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 10000;
+    cursor: pointer;
+    animation: shopOverlayFadeIn 0.2s ease;
+  }
+
+  @keyframes shopOverlayFadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  /* Override main.css — ensure sidebar is fixed, off-screen by default */
+  .shop-sidebar {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    height: 100vh !important;
+    width: 300px !important;
+    background-color: #fff !important;
+    z-index: 10001 !important;
+    overflow-y: auto !important;
+    transform: translateX(-100%) !important;
+    transition: transform 0.25s ease !important;
+    border-right: 1px solid #e5e7eb;
+    border-radius: 0 !important;
+    padding-top: 12px;
+  }
+
+  /* When active — slide in */
+  .shop-sidebar.active {
+    transform: translateX(0) !important;
+  }
+}

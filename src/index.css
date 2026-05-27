@@ -1,0 +1,636 @@
+/* ===================================== */
+/* Font Import & Base Typography */
+/* ===================================== */
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Exo:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&family=Quicksand:wght@300..700&display=swap");
+
+/* General Styles */
+.btn-elifnic {
+  color: #050040 !important;
+}
+
+.bg-elifnic {
+  background-color: #050040 !important;
+  color: #fff !important;
+}
+.text-elifnic {
+  color: #d8963c !important;
+}
+.text-skyblue {
+  color: #a9d4e7 !important;
+}
+.bg-skyblue {
+  background-color: #a9d4e7 !important;
+}
+.bg-organge {
+  background-color: #d8963c !important;
+}
+
+.addToCart_Continue:hover {
+  color: #d8963c !important;
+}
+
+.hoverCursor:hover::after {
+  content: "▸";
+  color: #d8963c;
+  font-size: 20px;
+  margin-top: 8px;
+  position: absolute;
+  left: -15px; /* place to the left */
+  top: -9%;
+  transform: translateY(-50%);
+}
+.hoverCursorAnimation:hover {
+  color: #d8963c !important;
+}
+.hoverCursorAnimation {
+  transition: color 0.2s ease;
+}
+/* ===================================== */
+/* User Panel Color Scheme Variables */
+/* ===================================== */
+:root {
+  /* Font Family Variables with System Fallbacks */
+  --heading-font:
+    "Quicksand", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Helvetica Neue", Arial, sans-serif;
+  --heading-font-two:
+    "Exo", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue",
+    Arial, sans-serif;
+  --heading-font-three:
+    "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue",
+    Arial, sans-serif;
+  --heading-font-four:
+    "Dancing Script", cursive, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  --body-font:
+    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue",
+    Arial, sans-serif;
+  --poppins-font:
+    "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue",
+    Arial, sans-serif;
+
+  /* Primary Colors */
+  --primary-dark: #050040;
+  --primary-orange: #d8963c;
+  --primary-skyblue: #a9d4e7;
+
+  /* Gradient Colors */
+  --gradient-primary: linear-gradient(135deg, #050040 0%, #0a0080 100%);
+  --gradient-orange: linear-gradient(135deg, #d8963c 0%, #c07d2a 100%);
+  --gradient-skyblue: linear-gradient(135deg, #a9d4e7 0%, #7bb5d1 100%);
+  --gradient-light: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+
+  /* Success & Error Colors */
+  --success-bg: #d4edda;
+  --success-border: #28a745;
+  --success-text: #155724;
+  --error-bg: #f8d7da;
+  --error-border: #dc3545;
+  --error-text: #721c24;
+
+  /* Neutral Colors */
+  /* --white: #ffffff; */
+  --light-gray: #f8f9fa;
+  --medium-gray: #e9ecef;
+  --dark-gray: #6c757d;
+  --text-primary: #333333;
+  --text-secondary: #6c757d;
+
+  /* Shadow Variables */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.06);
+
+  /* Cart Page Color Tokens (uses primary palette) */
+  --cart-bg: #f8f9fa;
+  --cart-card-bg: #ffffff;
+  --cart-card-border: rgba(5, 0, 64, 0.06);
+  --cart-card-hover-border: rgba(169, 212, 231, 0.3);
+  --cart-accent-bar: var(--gradient-primary);
+  --cart-price-color: var(--primary-dark);
+  --cart-total-color: var(--primary-orange);
+  --cart-sidebar-bg: #ffffff;
+  --cart-sidebar-body-bg: linear-gradient(
+    135deg,
+    rgba(169, 212, 231, 0.08) 0%,
+    rgba(5, 0, 64, 0.02) 100%
+  );
+  --cart-total-bar-bg: var(--gradient-primary);
+  --cart-checkout-bg: var(--gradient-orange);
+  --cart-remove-color: #dc3545;
+  --cart-free-shipping: #28a745;
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 6px 20px rgba(0, 0, 0, 0.12);
+  --shadow-primary: 0 4px 12px rgba(5, 0, 64, 0.3);
+  --shadow-orange: 0 4px 12px rgba(216, 150, 60, 0.3);
+  --shadow-skyblue: 0 4px 12px rgba(169, 212, 231, 0.3);
+
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-full: 50%;
+  /* Base Typography - Cross-Platform Consistency */
+  */
+/* ===================================== */
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    font-family: var(--body-font);
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  button,
+  input,
+  select,
+  textarea {
+    font-family: inherit;
+  }
+
+  /* ===================================== */
+  /* 
+  /* Transitions */
+  --transition-fast: all 0.2s ease;
+  --transition-normal: all 0.3s ease;
+  --transition-slow: all 0.5s ease;
+}
+
+/* ===================================== */
+/* User Panel Utility Classes */
+/* ===================================== */
+
+/* Background Utilities */
+.bg-gradient-primary {
+  background: var(--gradient-primary);
+  color: var(--white);
+}
+
+.bg-gradient-orange {
+  background: var(--gradient-orange);
+  color: var(--white);
+}
+
+.bg-gradient-skyblue {
+  background: var(--gradient-skyblue);
+  color: var(--primary-dark);
+}
+
+.bg-gradient-light {
+  background: var(--gradient-light);
+}
+
+/* Text Color Utilities */
+.text-primary-dark {
+  color: var(--primary-dark) !important;
+}
+
+.text-orange {
+  color: var(--primary-orange) !important;
+}
+
+.text-skyblue-custom {
+  color: var(--primary-skyblue) !important;
+}
+
+.text-success {
+  color: var(--success-text) !important;
+}
+
+.text-error {
+  color: var(--error-text) !important;
+}
+
+/* Border Utilities */
+.border-primary {
+  border-color: var(--primary-dark) !important;
+}
+
+.border-orange {
+  border-color: var(--primary-orange) !important;
+}
+
+.border-skyblue {
+  border-color: var(--primary-skyblue) !important;
+}
+
+/* Shadow Utilities */
+.shadow-primary {
+  box-shadow: var(--shadow-primary);
+}
+
+.shadow-orange {
+  box-shadow: var(--shadow-orange);
+}
+
+.shadow-skyblue {
+  box-shadow: var(--shadow-skyblue);
+}
+
+/* Button Utilities */
+.btn-gradient-primary {
+  background: var(--gradient-primary);
+  color: var(--white);
+  border: none;
+  padding: 12px 24px;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-normal);
+  box-shadow: var(--shadow-primary);
+}
+
+.btn-gradient-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(5, 0, 64, 0.4);
+}
+
+.btn-gradient-orange {
+  background: var(--gradient-orange);
+  color: var(--white);
+  border: none;
+  padding: 12px 24px;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-normal);
+  box-shadow: var(--shadow-orange);
+}
+
+.btn-gradient-orange:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(216, 150, 60, 0.4);
+}
+
+.btn-gradient-skyblue {
+  background: var(--gradient-skyblue);
+  color: var(--primary-dark);
+  border: none;
+  padding: 12px 24px;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-normal);
+  box-shadow: var(--shadow-skyblue);
+}
+
+.btn-gradient-skyblue:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(169, 212, 231, 0.4);
+}
+
+/* Card Utilities */
+.card-primary {
+  background: var(--white);
+  border: 2px solid var(--primary-dark);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  transition: var(--transition-normal);
+}
+
+.card-primary:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-primary);
+}
+
+.card-orange {
+  background: var(--white);
+  border: 2px solid var(--primary-orange);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  transition: var(--transition-normal);
+}
+
+.card-orange:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-orange);
+}
+
+.card-skyblue {
+  background: var(--white);
+  border: 2px solid var(--primary-skyblue);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  transition: var(--transition-normal);
+}
+
+.card-skyblue:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-skyblue);
+}
+
+/* Icon Utilities */
+.icon-primary {
+  color: var(--primary-dark);
+  font-size: 1.5rem;
+}
+
+.icon-orange {
+  color: var(--primary-orange);
+  font-size: 1.5rem;
+}
+
+.icon-skyblue {
+  color: var(--primary-skyblue);
+  font-size: 1.5rem;
+}
+
+/* Badge Utilities */
+.badge-primary {
+  background-color: var(--primary-dark);
+  color: var(--white);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.badge-orange {
+  background-color: var(--primary-orange);
+  color: var(--white);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.badge-skyblue {
+  background-color: var(--primary-skyblue);
+  color: var(--primary-dark);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: inline-block;
+}
+
+/* Link Utilities */
+.link-primary {
+  color: var(--primary-dark);
+  text-decoration: none;
+  font-weight: 600;
+  transition: var(--transition-fast);
+}
+
+.link-primary:hover {
+  color: var(--primary-orange);
+  text-decoration: underline;
+}
+
+.link-orange {
+  color: var(--primary-orange);
+  text-decoration: none;
+  font-weight: 600;
+  transition: var(--transition-fast);
+}
+
+.link-orange:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+
+/* Input Focus Styles */
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--primary-orange);
+  box-shadow: 0 0 0 3px rgba(216, 150, 60, 0.1);
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selection Color */
+::selection {
+  /* background-color: var(--primary-orange);
+  color: var(--white); */
+}
+
+::-moz-selection {
+  /* background-color: var(--primary-orange);
+  color: var(--white); */
+}
+
+/* ============================================================ */
+/* Mobile Bottom Tab Navigation — .mbtab namespace (no conflicts) */
+/* ============================================================ */
+
+/* Spacer so page content isn't hidden behind the fixed bar */
+.mbtab-spacer {
+  display: none;
+}
+
+/* The fixed bar itself */
+.mbtab {
+  display: none; /* hidden on desktop */
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10000; /* above everything */
+  background: #ffffff;
+  border-top: 1px solid rgba(5, 0, 64, 0.08);
+  box-shadow: 0 -4px 20px rgba(5, 0, 64, 0.1);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  padding-bottom: env(safe-area-inset-bottom, 0px); /* notch-safe */
+}
+
+.mbtab__inner {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  max-width: 480px;
+  margin: 0 auto;
+  height: 62px;
+  padding: 0 2px;
+}
+
+/* ---- Individual tab item ---- */
+.mbtab__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  height: 100%;
+  gap: 2px;
+  text-decoration: none !important;
+  color: var(--dark-gray, #6c757d);
+  position: relative;
+  transition: color 0.25s ease;
+  -webkit-tap-highlight-color: transparent;
+  cursor: pointer;
+}
+
+.mbtab__item:hover {
+  text-decoration: none !important;
+  color: var(--primary-dark, #050040);
+}
+
+/* Active state */
+.mbtab__item--active {
+  color: var(--primary-orange, #d8963c) !important;
+}
+
+.mbtab__item--active .mbtab__label {
+  color: var(--primary-orange, #d8963c);
+  font-weight: 700;
+}
+
+/* Active indicator dot */
+.mbtab__item--active::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 28px;
+  height: 3px;
+  border-radius: 0 0 4px 4px;
+  background: var(--primary-orange, #d8963c);
+  animation: mbtab-slide-in 0.3s ease forwards;
+}
+
+@keyframes mbtab-slide-in {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+  to {
+    width: 28px;
+    opacity: 1;
+  }
+}
+
+/* ---- Icon wrapper ---- */
+.mbtab__icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+}
+
+/* ---- Badge (cart count) ---- */
+.mbtab__badge {
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 18px;
+  text-align: center;
+  color: #fff;
+  background: var(--primary-orange, #d8963c);
+  border-radius: 9px;
+  box-shadow: 0 2px 6px rgba(216, 150, 60, 0.45);
+  pointer-events: none;
+  font-family: var(--body-font, "Inter", sans-serif);
+}
+
+/* ---- Label text ---- */
+.mbtab__label {
+  font-family: var(--body-font, "Inter", sans-serif);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  line-height: 1;
+  white-space: nowrap;
+  transition:
+    color 0.25s ease,
+    font-weight 0.25s ease;
+}
+
+/* ---- Raised center button (Shop) ---- */
+.mbtab__item--center {
+  position: relative;
+  flex: 1;
+}
+
+.mbtab__item--center .mbtab__label {
+  margin-top: 4px;
+}
+
+.mbtab__center-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: linear-gradient(
+    135deg,
+    var(--primary-dark, #050040) 0%,
+    #0d0078 100%
+  );
+  box-shadow: 0 4px 16px rgba(5, 0, 64, 0.35);
+  margin-top: -22px;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.mbtab__item--center:hover .mbtab__center-btn,
+.mbtab__item--center:active .mbtab__center-btn {
+  transform: scale(1.08);
+  box-shadow: 0 6px 22px rgba(5, 0, 64, 0.45);
+}
+
+.mbtab__item--center.mbtab__item--active .mbtab__center-btn {
+  background: linear-gradient(
+    135deg,
+    var(--primary-orange, #d8963c) 0%,
+    #c07d2a 100%
+  );
+  box-shadow: 0 4px 16px rgba(216, 150, 60, 0.45);
+}
+
+.mbtab__item--center.mbtab__item--active::before {
+  display: none; /* no top indicator for center btn */
+}
+
+.mbtab__center-icon {
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ---- Show only on mobile / tablet (≤ 768px) ---- */
+@media (max-width: 768px) {
+  .mbtab {
+    display: block;
+  }
+  .mbtab-spacer {
+    display: block;
+    height: calc(62px + env(safe-area-inset-bottom, 0px));
+  }
+}
+
+/* Small phones — slightly compact */
+@media (max-width: 360px) {
+  .mbtab__inner {
+    height: 56px;
+  }
+  .mbtab__label {
+    font-size: 9px;
+  }
+  .mbtab__center-btn {
+    width: 46px;
+    height: 46px;
+    margin-top: -18px;
+  }
+}

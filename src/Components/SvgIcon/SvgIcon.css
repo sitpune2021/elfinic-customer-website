@@ -1,0 +1,44 @@
+.svg-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.svg-icon img {
+  pointer-events: none;
+}
+
+.svg-icon[role="button"] {
+  cursor: pointer;
+}
+
+.svg-icon[role="button"]:hover {
+  opacity: 0.8;
+  transform: scale(1.05);
+}
+
+.svg-icon[role="button"]:active {
+  transform: scale(0.95);
+}
+
+/* Size variants */
+.svg-icon-sm {
+  width: 16px;
+  height: 16px;
+}
+
+.svg-icon-md {
+  width: 24px;
+  height: 24px;
+}
+
+.svg-icon-lg {
+  width: 32px;
+  height: 32px;
+}
+
+.svg-icon-xl {
+  width: 48px;
+  height: 48px;
+}

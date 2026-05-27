@@ -1,0 +1,70 @@
+.review-pagination {
+    margin-top: 32px;
+    padding: 20px 0;
+}
+
+.review-pagination .pagination {
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.review-pagination .page-item {
+    margin: 0;
+}
+
+.review-pagination .page-link {
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    color: #4a5568;
+    padding: 8px 12px;
+    min-width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    font-size: 14px;
+}
+
+.review-pagination .page-link:hover:not(:disabled) {
+    background-color: var(--main-600, #00B207);
+    color: white;
+    border-color: var(--main-600, #00B207);
+}
+
+.review-pagination .page-item.active .page-link {
+    background-color: var(--main-600, #00B207);
+    border-color: var(--main-600, #00B207);
+    color: white;
+    font-weight: 600;
+}
+
+.review-pagination .page-item.disabled .page-link {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background-color: #f8f9fa;
+}
+
+.review-pagination .page-link i {
+    font-size: 16px;
+}
+
+.pagination-info {
+    color: #718096;
+    font-size: 13px;
+}
+
+@media (max-width: 576px) {
+    .review-pagination .pagination {
+        gap: 4px;
+    }
+    
+    .review-pagination .page-link {
+        padding: 6px 10px;
+        min-width: 36px;
+        font-size: 13px;
+    }
+    
+    .review-pagination .page-link i {
+        font-size: 14px;
+    }
+}

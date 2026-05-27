@@ -1,0 +1,359 @@
+/* Container Styles */
+.containerw {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Main Content Wrapper */
+.policy-wrapper {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.7;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  margin-top: 10px;
+  margin-bottom: 60px;
+  padding: 30px;
+  color: #333;
+  background: #ffffff;
+  border-radius: 12px;
+  transition: box-shadow 0.3s ease;
+}
+
+.policy-wrapper:hover {
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Title Styles */
+.policy-title {
+  text-align: center;
+  color: #2c3e50;
+  border-bottom: 3px solid #3498db;
+  padding-bottom: 15px;
+  margin-bottom: 25px;
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+/* Meta Information */
+.policy-meta {
+  margin: 20px 0;
+  padding: 15px;
+  background: #f8f9fa;
+  border-left: 4px solid #3498db;
+  border-radius: 4px;
+}
+
+.policy-meta strong {
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+/* Paragraph Styles */
+.policy-paragraph {
+  margin: 18px 0;
+  text-align: justify;
+  line-height: 1.8;
+}
+
+.policy-paragraph strong {
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+/* Section Headings */
+.section-heading {
+  color: #2c3e50;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  border-left: 5px solid #3498db;
+  padding-left: 15px;
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+/* Sub-section Headings */
+.sub-section-heading {
+  color: #2c3e50;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  display: block;
+}
+
+/* List Styles */
+.policy-list {
+  margin: 18px 0;
+  padding-left: 25px;
+  list-style: none;
+}
+
+.policy-list li {
+  margin: 12px 0;
+  padding-left: 25px;
+  position: relative;
+  line-height: 1.7;
+}
+
+.policy-list li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: #3498db;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.policy-list li strong {
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+/* Nested List Styles */
+.policy-list .policy-list {
+  margin: 10px 0;
+  padding-left: 20px;
+}
+
+.policy-list .policy-list li::before {
+  content: "•";
+  color: #3498db;
+  font-size: 1rem;
+}
+
+/* Table Styles */
+.policy-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 25px 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.policy-table thead {
+  background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+}
+
+.policy-table th {
+  border: 1px solid #ddd;
+  padding: 15px;
+  text-align: left;
+  font-weight: 600;
+  color: #ffffff;
+  font-size: 0.95rem;
+}
+
+.policy-table td {
+  border: 1px solid #e0e0e0;
+  padding: 15px;
+  text-align: left;
+  background: #ffffff;
+}
+
+.policy-table tbody tr {
+  transition: background-color 0.2s ease;
+}
+
+.policy-table tbody tr:hover {
+  background-color: #f8f9fa;
+}
+
+.policy-table tbody tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+.policy-table tbody tr:nth-child(even):hover {
+  background-color: #f0f0f0;
+}
+
+.policy-table td strong {
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+/* Mobile Responsive Styles */
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 0 10px;
+  }
+
+  .policy-wrapper {
+    padding: 20px 15px;
+    margin-top: 5px;
+    margin-bottom: 40px;
+    border-radius: 8px;
+  }
+
+  .policy-title {
+    font-size: 1.8rem;
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+  }
+
+  .section-heading {
+    font-size: 1.4rem;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    padding-left: 12px;
+    border-left-width: 4px;
+  }
+
+  .sub-section-heading {
+    font-size: 1.15rem;
+  }
+
+  .policy-paragraph {
+    margin: 15px 0;
+    text-align: left;
+    line-height: 1.7;
+    font-size: 0.95rem;
+  }
+
+  .policy-list {
+    padding-left: 20px;
+    margin: 15px 0;
+  }
+
+  .policy-list li {
+    margin: 10px 0;
+    padding-left: 20px;
+    font-size: 0.95rem;
+  }
+
+  .policy-meta {
+    padding: 12px;
+    font-size: 0.9rem;
+  }
+
+  .policy-table {
+    display: block;
+    width: 100%;
+    margin: 20px 0;
+    border: none;
+  }
+
+  .policy-table thead {
+    display: none;
+  }
+
+  .policy-table tbody {
+    display: block;
+    width: 100%;
+  }
+
+  .policy-table tr {
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background: #ffffff;
+  }
+
+  .policy-table td {
+    display: block;
+    width: 100%;
+    border: none;
+    padding: 12px 15px;
+    text-align: left;
+    position: relative;
+    padding-left: 45%;
+    box-sizing: border-box;
+  }
+
+  .policy-table td:before {
+    content: attr(data-label);
+    position: absolute;
+    left: 15px;
+    width: 40%;
+    font-weight: 600;
+    color: #2c3e50;
+    font-size: 0.85rem;
+    top: 12px;
+  }
+
+  .policy-table td:first-child {
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+    color: #ffffff;
+    font-weight: 600;
+    padding: 15px;
+    padding-left: 15px;
+  }
+
+  .policy-table td:first-child:before {
+    display: none;
+  }
+
+  .policy-table td:first-child strong {
+    color: #ffffff;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .policy-wrapper {
+    padding: 15px 12px;
+    margin-bottom: 30px;
+  }
+
+  .policy-title {
+    font-size: 1.5rem;
+    padding-bottom: 10px;
+  }
+
+  .section-heading {
+    font-size: 1.25rem;
+    margin-top: 25px;
+    padding-left: 10px;
+    border-left-width: 3px;
+  }
+
+  .sub-section-heading {
+    font-size: 1.1rem;
+  }
+
+  .policy-paragraph {
+    font-size: 0.9rem;
+    margin: 12px 0;
+  }
+
+  .policy-list li {
+    font-size: 0.9rem;
+    margin: 8px 0;
+  }
+
+  .policy-table td {
+    padding-left: 50%;
+    font-size: 0.85rem;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .policy-table td:before {
+    font-size: 0.8rem;
+    width: 45%;
+    top: 10px;
+  }
+
+  .policy-meta {
+    padding: 10px;
+    font-size: 0.85rem;
+  }
+}
+
+@media print {
+  .policy-wrapper {
+    box-shadow: none;
+    margin: 0;
+    padding: 20px;
+  }
+
+  .policy-table {
+    page-break-inside: avoid;
+  }
+}
